@@ -1,4 +1,4 @@
-@use "../../styles/partials/mixins";
+@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
 .warehouse {
@@ -24,6 +24,19 @@
     flex-direction: row;
     gap: 1rem;
   }
+
+  &__details {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.address {
+  @include tablet {
+    max-width: 60%;
+  }
 }
 
 .edit {
@@ -34,6 +47,20 @@
   color: $instock-white;
   border-radius: 50px;
   border: solid $instock-indigo;
+  padding: 0.5rem;
+
+  @include tablet {
+    border-radius: 12px;
+    padding: 0px 12px;
+  }
+}
+
+.btn__text {
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
 }
 
 .contact {
@@ -41,4 +68,13 @@
   flex-direction: row;
   gap: 2rem;
   border-top: solid 2px #bdc5d5;
+
+  @include tablet {
+    border-top: none;
+    border-left: solid 2px #bdc5d5;
+    padding-left: 1rem;
+    width: 60%;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
 }

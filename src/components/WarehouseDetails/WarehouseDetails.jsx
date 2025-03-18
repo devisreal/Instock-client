@@ -12,6 +12,7 @@ export default function WarehouseDetails() {
         </section>
         <button className="edit">
           <EditSvg color={"white"} />
+          <p className="btn__text">Edit</p>
         </button>
       </div>
       <div className="warehouse__details">
