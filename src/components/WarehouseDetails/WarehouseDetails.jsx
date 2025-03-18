@@ -12,15 +12,12 @@ export default function WarehouseDetails() {
         </section>
         <button className="edit">
           <EditSvg color={"white"} />
-          Edit
         </button>
       </div>
       <div className="warehouse__details">
         <div className="warehouse__address">
           <p className="address__title">Warehouse Address:</p>
-          <p className="address">
-            33 Pear Street SW, <br /> Washington, USA
-          </p>
+          <p className="address">33 Pear Street SW, Washington, USA</p>
         </div>
         <section className="contact">
           <div className="name__details">
