@@ -1,0 +1,14 @@
+.warehouse-list {
+  width: 21.4375rem;
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cta-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
