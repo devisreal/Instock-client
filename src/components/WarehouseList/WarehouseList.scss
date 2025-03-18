@@ -5,6 +5,7 @@
   width: 90%;
   margin: 0 auto;
   border: black solid 1px; // REMOVE
+  min-width: 15rem;
 
   @include tablet {
   }
@@ -88,5 +89,25 @@
     @include desktop {
       margin-right: 1rem;
     }
+  }
+
+  &__field-names {
+    margin: 1rem;
+  }
+
+  &__field-names-list {
+    font-size: 0.75rem;
+    display: flex;
+    gap: 1rem;
+
+    @include tablet {
+      justify-content: space-evenly;
+      background-color: rgba(237, 235, 235, 0.34);
+    }
+  }
+
+  &__field-names-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
