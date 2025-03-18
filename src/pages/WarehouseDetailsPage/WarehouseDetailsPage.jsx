@@ -1,5 +1,7 @@
+import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 import "./WarehouseDetailsPage.scss";
 
 export default function WarehouseDetailsPage() {
-  return <div>Warehouse Details Page</div>;
+  return;
+  <WarehouseDetails />;
 }
