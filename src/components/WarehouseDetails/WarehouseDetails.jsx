@@ -1,6 +1,6 @@
 import "../WarehouseDetails/WarehouseDetails.scss";
 import back from "../../assets/icons/arrow_back-24px.svg";
-import edit from "../../assets/icons/edit-24px.svg";
+import EditSvg from "../EditSvg/EditSvg";
 
 export default function WarehouseDetails() {
   return (
@@ -11,7 +11,7 @@ export default function WarehouseDetails() {
           <h2> Washington</h2>
         </section>
         <button className="edit">
-          <img src={edit} alt="" />
+          <EditSvg color={"white"} />
           Edit
         </button>
       </div>
