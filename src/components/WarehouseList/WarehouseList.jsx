@@ -2,6 +2,7 @@ import "./WarehouseList.scss";
 import sortImg from "../../assets/icons/sort-24px.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Warehouse from "../Warehouse/Warehouse";
 
 export default function WarehouseList() {
@@ -36,7 +37,9 @@ export default function WarehouseList() {
             placeholder="Search..."
           />
           <button className="warehouse-list__button">
-            + Add New Warehouse
+            <Link className="warehouse-list__link" to="/warehouses/add">
+              + Add New Warehouse{" "}
+            </Link>
           </button>
         </div>
       </header>
@@ -54,7 +57,7 @@ export default function WarehouseList() {
             CONTACT NAME
             <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
           </li>
-          <li className="warehouse-list__table-heading">
+          <li className="warehouse-list__table-heading warehouse-list__table-heading--wide">
             CONTACT INFORMATION{" "}
             <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
           </li>

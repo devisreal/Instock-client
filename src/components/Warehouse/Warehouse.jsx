@@ -23,7 +23,9 @@ export default function Warehouse({ warehouse }) {
           </li>
           <li className="warehouse-main__info-item">
             <p className="warehouse-main__info-subheading">ADDRESS</p>
-            <p className="warehouse-main__info">{warehouse.address}, </p>
+            <p className="warehouse-main__info warehouse-main__info--block">
+              {warehouse.address},{" "}
+            </p>
             <p className="warehouse-main__info">{warehouse.city}, </p>
             <p className="warehouse-main__info">{warehouse.country}</p>
           </li>

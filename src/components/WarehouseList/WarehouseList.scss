@@ -4,8 +4,17 @@
 .warehouse-list {
   width: 90%;
   margin: 0 auto;
-  border: black solid 1px; // REMOVE
   min-width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 3px 0px;
+  border-radius: 3px;
+
+  @include desktop {
+    width: 80%;
+  }
+
+  :last-child {
+    border-bottom: none;
+  }
 
   &__header {
     display: flex;
@@ -81,11 +90,17 @@
       width: 11.6rem;
       margin-left: 1rem;
       height: 2.375rem;
+      width: 10.5rem;
     }
 
     @include desktop {
       margin-right: 1rem;
     }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $instock-white;
   }
 
   &__table-headings {
@@ -104,7 +119,7 @@
     height: 2.5rem;
 
     @include tablet {
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       background-color: rgba(237, 235, 235, 0.34);
       width: 100%;
@@ -113,6 +128,15 @@
 
   &__table-heading {
     display: flex;
+
+    @include tablet {
+      width: 22%;
+      justify-content: center;
+    }
+
+    &--wide {
+      min-width: 9.1875rem;
+    }
   }
 
   &__sort-icon {
