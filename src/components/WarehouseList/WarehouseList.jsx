@@ -10,7 +10,9 @@ export default function WarehouseList() {
 
   const fetchWarehouses = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5050/warehouses`);
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/warehouses`
+      );
       setWarehouse(data);
     } catch (error) {
       console.log(error);
