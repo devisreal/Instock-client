@@ -1,6 +1,10 @@
-import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 import "./WarehousesPage.scss";
+import WarehouseList from "../../components/WarehouseList/WarehouseList";
 
 export default function WarehousesPage() {
-  return <p>test</p>;
+  return (
+    <>
+      <WarehouseList />
+    </>
+  );
 }
