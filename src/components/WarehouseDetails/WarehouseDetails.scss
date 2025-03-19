@@ -34,8 +34,16 @@
     }
   }
 }
+.back__link {
+  display: flex;
+  align-items: center;
+}
 
 .address {
+  &__title {
+    color: $placeholder-text;
+  }
+
   @include tablet {
     max-width: 60%;
   }
@@ -44,7 +52,7 @@
 .edit {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   background-color: $instock-indigo;
   color: $instock-white;
   border-radius: 50px;
@@ -52,8 +60,8 @@
   padding: 0.5rem;
 
   @include tablet {
-    border-radius: 12px;
-    padding: 0px 12px;
+    border-radius: 20px;
+    padding: 0px 16px;
   }
 }
 
@@ -69,14 +77,24 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  border-top: solid 2px #bdc5d5;
+  border-bottom: solid 2px #bdc5d5;
+
+  &__title {
+    color: $placeholder-text;
+  }
 
   @include tablet {
-    border-top: none;
     border-left: solid 2px #bdc5d5;
     padding-left: 1rem;
     width: 60%;
     justify-content: center;
     justify-content: space-evenly;
+    border-bottom: none;
+  }
+}
+
+.name {
+  &__title {
+    color: $placeholder-text;
   }
 }

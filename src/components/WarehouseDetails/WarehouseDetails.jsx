@@ -8,7 +8,7 @@ export default function WarehouseDetails() {
     <div className="warehouse">
       <div className="warehouse__nav">
         <section className="warehouse__title">
-          <Link to={"/"}>
+          <Link className="back__link" to={"/"}>
             <img src={back} alt="back to homepage" />
           </Link>
           <h2> Washington</h2>
