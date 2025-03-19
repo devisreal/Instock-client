@@ -13,6 +13,8 @@
 		justify-content: space-between;
 		align-items: center;
 		list-style: none;
+		padding: 0;
+		margin-bottom: 4rem;
 	}
 
 	&__title {
@@ -22,5 +24,6 @@
 		border-radius: 0.5rem;
 		background-color: #13182c;
 		text-align: center;
+		margin: 0 1rem;
 	}
 }
