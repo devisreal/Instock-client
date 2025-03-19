@@ -1,14 +1,31 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .nav {
-  background-color: #232940;
+  background-color: $nav-background;
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding: 2rem 0 6rem;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem 8rem;
+  }
+
+  @include desktop {
+    padding: 2rem 10rem 10rem;
+  }
 
   &__logo {
     margin: 0 auto;
-    padding: 2rem 0 0;
+
+    @include tablet {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &__container {
@@ -16,10 +33,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    margin: 1rem 0 4rem;
+    margin: 1rem 0;
 
     @include tablet {
-      flex-direction: row;
+      margin: 0;
     }
   }
 
@@ -27,11 +44,18 @@
     color: white;
     font-size: 0.7rem;
     width: 50%;
-    border-radius: 0.5rem;
-    background-color: #13182c;
+    border-radius: 1rem;
     text-align: center;
     margin: 0 1rem;
     text-decoration: none;
-    padding: 0.3rem 0;
+
+    &.active {
+      background-color: $instock-black;
+      padding: 0.3rem 0;
+    }
+
+    @include tablet {
+      padding: 0.5rem 1rem;
+    }
   }
 }
