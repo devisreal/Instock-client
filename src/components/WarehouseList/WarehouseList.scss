@@ -13,7 +13,7 @@
   &__header {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px $placeholder-text solid;
+    border-bottom: 1px $divider-lines solid;
 
     @include tablet {
       border: none;
@@ -96,7 +96,6 @@
 
     @include tablet {
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
     }
   }
@@ -109,13 +108,39 @@
 
     @include tablet {
       justify-content: space-evenly;
+      align-items: center;
       background-color: rgba(237, 235, 235, 0.34);
       width: 100%;
     }
   }
 
   &__table-heading {
-    @include tablet {
-    }
+    display: flex;
+  }
+
+  &__sort-icon {
+    width: 1rem;
+  }
+
+  &__info-container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px $divider-lines solid;
+  }
+
+  &__info-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icons-wrapper {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    width: 2rem;
   }
 }
