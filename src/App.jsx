@@ -7,10 +7,12 @@ import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import InventoriesPage from "./pages/InventoriesPage/InventoriesPage";
 import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
 import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navigation />
       <Routes>
         <Route path="/" element={<Navigate to="/warehouses" />} />
         <Route path="/warehouses" element={<WarehousesPage />} />
