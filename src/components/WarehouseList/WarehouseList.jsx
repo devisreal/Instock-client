@@ -1,9 +1,29 @@
 import "./WarehouseList.scss";
 import sortImg from "../../assets/icons/sort-24px.svg";
-import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
-import editIcon from "../../assets/icons/edit-24px.svg";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Warehouse from "../Warehouse/Warehouse";
 
 export default function WarehouseList() {
+  const [warehouses, setWarehouse] = useState(null);
+
+  const fetchWarehouses = async () => {
+    try {
+      const { data } = await axios.get(`http://localhost:5050/warehouses`);
+      setWarehouse(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchWarehouses();
+  }, []);
+
+  if (!warehouses) {
+    return <p className="loading">Loading...</p>;
+  }
+
   return (
     <section className="warehouse-list">
       <header className="warehouse-list__header">
@@ -44,40 +64,9 @@ export default function WarehouseList() {
           </li>
         </ul>
       </div>
-      <ul className="warehouse-list__info-container">
-        <div className="warehouse-list__info-col">
-          <li className="warehouse-list__info-item">
-            <p className="warehouse-list__info-subheading">WAREHOUSE</p>
-            <p className="warehouse-list__info">Lorem ipsum dolor sit amet.</p>
-          </li>
-          <li className="warehouse-list__info-item">
-            <p className="warehouse-list__info-subheading">ADDRESS</p>
-            <p className="warehouse-list__info">Lorem ipsum dolor sit amet.</p>
-          </li>
-        </div>
-        <div className="warehouse-list__info-col">
-          <li className="warehouse-list__info-item">
-            <p className="warehouse-list__info-subheading">CONTACT NAME</p>
-            <p className="warehouse-list__info">Lorem ipsum dolor sit amet.</p>
-          </li>
-          <li className="warehouse-list__info-item">
-            <p className="warehouse-list__info-subheading">CONTACT INFO</p>
-            <p className="warehouse-list__info">Lorem ipsum dolor sit amet.</p>
-          </li>
-        </div>
-      </ul>
-      <div className="warehouse-list__icons-wrapper">
-        <img
-          className="warehouse-list__icon"
-          src={deleteIcon}
-          alt="Bin warehouse icon"
-        />
-        <img
-          className="warehouse-list__icon"
-          src={editIcon}
-          alt="Edit warehouse icon"
-        />
-      </div>
+      {warehouses.map((warehouse) => {
+        return <Warehouse key={warehouse.id} warehouse={warehouse} />;
+      })}
     </section>
   );
 }

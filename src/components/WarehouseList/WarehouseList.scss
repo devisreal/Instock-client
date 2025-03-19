@@ -7,9 +7,6 @@
   border: black solid 1px; // REMOVE
   min-width: 15rem;
 
-  @include tablet {
-  }
-
   &__header {
     display: flex;
     flex-direction: column;
@@ -24,7 +21,7 @@
   }
 
   &__title {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     line-height: 2.25rem;
     padding: 1rem 1.5rem 0;
 
@@ -120,27 +117,5 @@
 
   &__sort-icon {
     width: 1rem;
-  }
-
-  &__info-container {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    border-bottom: 1px $divider-lines solid;
-  }
-
-  &__info-col {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__icons-wrapper {
-    margin: 1rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__icon {
-    width: 2rem;
   }
 }
