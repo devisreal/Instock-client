@@ -1,13 +1,16 @@
 import "../WarehouseDetails/WarehouseDetails.scss";
 import back from "../../assets/icons/arrow_back-24px.svg";
 import EditSvg from "../EditSvg/EditSvg";
+import { Link } from "react-router-dom";
 
 export default function WarehouseDetails() {
   return (
     <div className="warehouse">
       <div className="warehouse__nav">
         <section className="warehouse__title">
-          <img src={back} alt="" />
+          <Link to={"/"}>
+            <img src={back} alt="back to homepage" />
+          </Link>
           <h2> Washington</h2>
         </section>
         <button className="edit">
