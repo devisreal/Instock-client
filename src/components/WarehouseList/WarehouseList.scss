@@ -91,23 +91,31 @@
     }
   }
 
-  &__field-names {
-    margin: 1rem;
+  &__table-headings {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
   }
 
-  &__field-names-list {
+  &__table-headings-list {
     font-size: 0.75rem;
     display: flex;
     gap: 1rem;
+    height: 2.5rem;
 
     @include tablet {
       justify-content: space-evenly;
       background-color: rgba(237, 235, 235, 0.34);
+      width: 100%;
     }
   }
 
-  &__field-names-wrapper {
-    display: flex;
-    flex-direction: column;
+  &__table-heading {
+    @include tablet {
+    }
   }
 }
