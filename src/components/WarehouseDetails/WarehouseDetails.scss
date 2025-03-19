@@ -1,0 +1,82 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse {
+  width: 90%;
+  margin: auto;
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px $divider-lines;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__details {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.address {
+  @include tablet {
+    max-width: 60%;
+  }
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: $instock-indigo;
+  color: $instock-white;
+  border-radius: 50px;
+  border: solid $instock-indigo;
+  padding: 0.5rem;
+
+  @include tablet {
+    border-radius: 12px;
+    padding: 0px 12px;
+  }
+}
+
+.btn__text {
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border-top: solid 2px #bdc5d5;
+
+  @include tablet {
+    border-top: none;
+    border-left: solid 2px #bdc5d5;
+    padding-left: 1rem;
+    width: 60%;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+}
