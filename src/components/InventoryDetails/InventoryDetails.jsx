@@ -2,12 +2,13 @@ import "./InventoryDetails.scss";
 import Arrow from "../../assets/icons/arrow_back-24px.svg";
 import EditSvg from "../EditSvg/EditSvg";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function InventoryDetails() {
   const [details, setDetails] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const fetchInventoryDetails = async () => {
     try {
@@ -42,9 +43,12 @@ export default function InventoryDetails() {
     <section className="inventory-details">
       <div className="inventory-details__banner">
         <div className="inventory-details__wrapper">
-          <Link to="/inventories" className="inventory-details__arrow">
+          <button
+            className="inventory-details__arrow"
+            onClick={() => navigate(-1)}
+          >
             <img src={Arrow} alt="Back Arrow" />
-          </Link>
+          </button>
           <h1 className="inventory-details__header">Television</h1>
         </div>
         <Link to="/inventories/:id//edit">
