@@ -40,6 +40,12 @@ p {
   &__wrapper {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
   }
 
   &__header {

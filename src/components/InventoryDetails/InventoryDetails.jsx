@@ -42,17 +42,17 @@ export default function InventoryDetails() {
     <section className="inventory-details">
       <div className="inventory-details__banner">
         <div className="inventory-details__wrapper">
-          <img
-            src={Arrow}
-            alt="Back Arrow"
-            className="inventory-details__arrow"
-          />
+          <Link to="/inventories" className="inventory-details__arrow">
+            <img src={Arrow} alt="Back Arrow" />
+          </Link>
           <h1 className="inventory-details__header">Television</h1>
         </div>
-        <button className="inventory-details__button">
-          <EditSvg color={"white"} />
-          <span className="inventory-details__button-text">Edit</span>
-        </button>
+        <Link to="/inventories/:id//edit">
+          <button className="inventory-details__button">
+            <EditSvg color={"white"} />
+            <span className="inventory-details__button-text">Edit</span>
+          </button>
+        </Link>
       </div>
       <div className="inventory-details__card">
         <div className="inventory-details__left-side">
