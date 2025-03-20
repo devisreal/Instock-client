@@ -11,6 +11,24 @@ body {
   position: absolute;
   top: 0;
   padding: 1rem;
+  position: fixed;
+  min-width: 21.4375rem;
+
+  @include tablet {
+    width: 90%;
+    height: 16.375rem;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 
   &__title {
     font-size: 1.75rem;
@@ -19,11 +37,23 @@ body {
     width: 70%;
   }
 
-  &__btn-container {
+  &__footer {
     display: flex;
-    justify-content: space-evenly;
-    // position: absolute;
-    // bottom: 0;
+    justify-content: center;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__btn-container {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__btn {
@@ -35,11 +65,16 @@ body {
     background-color: $instock-white;
     border: 1px solid $divider-lines;
 
+    @include tablet {
+      width: 4.5rem;
+      height: 2rem;
+    }
+
     &--highlight {
       background-color: $label-outofstock;
       color: $instock-white;
       border-color: $label-outofstock;
-      margin-left: 0.5rem;
+      margin-left: 1rem;
     }
   }
 }
