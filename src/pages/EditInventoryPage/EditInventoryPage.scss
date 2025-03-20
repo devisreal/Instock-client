@@ -1,0 +1,86 @@
+@use "../../styles/partials/variables" as *;
+
+.edit__inventory {
+  width: 90%;
+  margin: auto;
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 2px $divider-lines;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 2px $divider-lines;
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
+
+.item__input {
+  margin-top: 0.5rem;
+  border: solid 1px;
+  padding: 1rem;
+}
+.description__input {
+  margin-top: 0.5rem;
+  border: solid 1px;
+  padding: 5rem;
+}
+
+.dropdown {
+  border-radius: 20px;
+}
+
+.avaliability {
+  margin-bottom: 2rem;
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+  }
+}
+
+.submit__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem 0;
+}
+
+.btn {
+  &__save {
+    padding: 1rem;
+  }
+
+  &__cancel {
+    padding: 1rem;
+  }
+}
