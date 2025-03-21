@@ -112,10 +112,13 @@
 
   &__table-headings {
     display: none;
+    background-color: rgba(237, 235, 235, 0.34);
+    height: 2rem;
 
     @include tablet {
       display: flex;
       align-items: center;
+      padding-left: 1.5rem;
     }
   }
 
@@ -123,12 +126,10 @@
     font-size: 0.75rem;
     display: flex;
     gap: 1rem;
-    height: 2.5rem;
 
     @include tablet {
       justify-content: center;
       align-items: center;
-      background-color: rgba(237, 235, 235, 0.34);
       width: 100%;
     }
   }
@@ -139,10 +140,11 @@
     @include tablet {
       width: 22%;
       justify-content: center;
+      width: 20%;
     }
 
     &--wide {
-      min-width: 9.1875rem;
+      min-width: 10rem;
     }
   }
 

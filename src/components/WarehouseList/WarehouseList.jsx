@@ -66,10 +66,7 @@ export default function WarehouseList({
             CONTACT INFORMATION{" "}
             <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
           </li>
-          <li className="warehouse-list__table-heading">
-            ACTIONS{" "}
-            <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
-          </li>
+          <li className="warehouse-list__table-heading">ACTIONS </li>
         </ul>
       </div>
 

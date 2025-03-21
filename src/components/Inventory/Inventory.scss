@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 0 3rem;
+    // padding-left: 2rem;
   }
 
   &:hover {
@@ -25,7 +25,10 @@
     @include tablet {
       justify-content: space-evenly;
       width: 100%;
-      padding: 0;
+    }
+
+    @include desktop {
+      padding-right: 4rem;
     }
   }
 
@@ -37,7 +40,7 @@
     @include tablet {
       flex-direction: row;
       width: 100%;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
   }
 
@@ -62,8 +65,12 @@
   }
 
   &__info-item {
+    font-size: 0.85rem;
+    padding-bottom: 1rem;
+
     @include tablet {
       width: 50%;
+      width: 25%;
     }
   }
 
@@ -72,6 +79,29 @@
 
     &--block {
       display: block;
+    }
+  }
+
+  &__status {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      width: 6.375rem;
+      position: relative;
+      right: 1.5rem;
+      max-width: 6.375rem;
+    }
+
+    &--green {
+      @include in-stock;
+      text-align: center;
+      min-width: 4.4406rem;
+    }
+
+    &--red {
+      @include out-of-stock;
     }
   }
 

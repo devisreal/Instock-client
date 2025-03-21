@@ -42,15 +42,15 @@ export default function InventoryList({
             placeholder="Search..."
           />
           <button className="inventory-list__button">
-            <Link className="inventory-list__link" to="/inventorys/add">
-              + Add New inventory{" "}
+            <Link className="inventory-list__link" to="/inventories/add">
+              + Add New Item{" "}
             </Link>
           </button>
         </div>
       </header>
       <div className="inventory-list__table-headings">
         <ul className="inventory-list__table-headings-list">
-          <li className="inventory-list__table-heading">
+          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
             INVENTORY ITEM
             <img className="inventory-list__sort-icon" src={sortImg} alt="" />
           </li>
@@ -58,17 +58,20 @@ export default function InventoryList({
             CATEGORY
             <img className="inventory-list__sort-icon" src={sortImg} alt="" />
           </li>
-          <li className="inventory-list__table-heading">
+          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
             STATUS
             <img className="inventory-list__sort-icon" src={sortImg} alt="" />
           </li>
-          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
+          <li className="inventory-list__table-heading ">
             QTY{" "}
             <img className="inventory-list__sort-icon" src={sortImg} alt="" />
           </li>
           <li className="inventory-list__table-heading">
             WAREHOUSE{" "}
             <img className="inventory-list__sort-icon" src={sortImg} alt="" />
+          </li>
+          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
+            ACTIONS
           </li>
         </ul>
       </div>

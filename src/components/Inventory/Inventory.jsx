@@ -22,7 +22,7 @@ export default function Inventory({
             <p className="inventory-main__info-subheading">INVENTORY ITEM</p>
             <Link
               className="inventory-main__link-wrapper"
-              to={`/inventorys/${inventory.id}`}
+              to={`/inventories/${inventory.id}`}
             >
               <p className="inventory-main__info inventory-main__link">
                 {inventory.item_name}
@@ -33,14 +33,22 @@ export default function Inventory({
           <li className="inventory-main__info-item">
             <p className="inventory-main__info-subheading">CATEGORY</p>
             <p className="inventory-main__info inventory-main__info--block">
-              {inventory.description},{" "}
+              {inventory.category}
             </p>
           </li>
         </div>
         <div className="inventory-main__info-col">
           <li className="inventory-main__info-item">
             <p className="inventory-main__info-subheading">STATUS</p>
-            <p className="inventory-main__info">{inventory.status}</p>
+            <p
+              className={`inventory-main__status ${
+                inventory.status.toLowerCase() === "in stock"
+                  ? "inventory-main__status--green"
+                  : "inventory-main__status--red"
+              }`}
+            >
+              {inventory.status.toUpperCase()}
+            </p>
           </li>
           <li className="inventory-main__info-item">
             <p className="inventory-main__info-subheading">QTY</p>
