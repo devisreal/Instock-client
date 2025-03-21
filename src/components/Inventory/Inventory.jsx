@@ -11,7 +11,7 @@ export default function Inventory({
 }) {
   const handleDeleteBtn = () => {
     setIsModalOpen(true);
-    setSelectedInventory(inventory.id);
+    setSelectedInventory(inventory);
   };
 
   return (

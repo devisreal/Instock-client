@@ -9,7 +9,7 @@ export default function InventoriesPage({ isModalOpen, setIsModalOpen }) {
   return (
     <>
       <InventoryList
-        setSelectedWarehouse={setSelectedInventory}
+        setSelectedInventory={setSelectedInventory}
         setIsModalOpen={setIsModalOpen}
       />
       {isModalOpen && (

@@ -38,17 +38,31 @@ export default function Modal({
           />
         </div>
         <div className="modal__main">
-          {inventoriesPage && <div>Hello</div>}
-          {warehousesPage && (
+          {inventoriesPage && (
             <h2 className="modal__title">
-              Delete {selectedItem.name} warehouse?
+              Delete {selectedItem.item_name} inventory item?
             </h2>
           )}
+          {warehousesPage && (
+            <h2 className="modal__title">
+              Delete {selectedItem.warehouse_name} warehouse?
+            </h2>
+          )}
+          {inventoriesPage && (
+            <p className="modal__text">
+              Please confirm that you’d like to delete the{" "}
+              {selectedItem.item_name} from the invenotry list. You won’t be
+              able to undo this action.
+            </p>
+          )}
+          {warehousesPage && (
+            <p className="modal__text">
+              Please confirm that you’d like to delete the{" "}
+              {selectedItem.warehouse_name} from the list of warehouses. You
+              won’t be able to undo this action.
+            </p>
+          )}
 
-          <p className="modal__text">
-            Please confirm that you’d like to delete the Washington from the
-            list of warehouses. You won’t be able to undo this action.
-          </p>
           <div className="modal__footer">
             <div className="modal__btn-container">
               <button className="modal__btn" onClick={handleCloseModal}>
