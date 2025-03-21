@@ -4,7 +4,16 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 
-export default function Warehouse({ warehouse }) {
+export default function Warehouse({
+  warehouse,
+  setIsModalOpen,
+  setSelectedWarehouse,
+}) {
+  const handleDeleteBtn = () => {
+    setIsModalOpen(true);
+    setSelectedWarehouse(warehouse.id);
+  };
+
   return (
     <div className="warehouse-main">
       <ul className="warehouse-main__info-container">
@@ -51,6 +60,7 @@ export default function Warehouse({ warehouse }) {
           className="warehouse-main__icon"
           src={deleteIcon}
           alt="Bin warehouse icon"
+          onClick={handleDeleteBtn}
         />
         <img
           className="warehouse-main__icon"
