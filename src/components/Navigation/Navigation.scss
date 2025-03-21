@@ -12,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 1rem 8rem;
+    padding: 2rem 2rem 8rem;
   }
 
   @include desktop {
@@ -42,20 +42,26 @@
 
   &__title {
     color: white;
-    font-size: 0.7rem;
+    font-size: 1rem;
     width: 50%;
     border-radius: 1rem;
     text-align: center;
     margin: 0 1rem;
     text-decoration: none;
 
+    @include tablet {
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+    }
+
     &.active {
       background-color: $instock-black;
       padding: 0.3rem 0;
-    }
 
-    @include tablet {
-      padding: 0.5rem 1rem;
+      @include tablet {
+        padding: 0.5rem 1rem;
+        margin: 0;
+      }
     }
   }
 }
