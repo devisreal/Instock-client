@@ -1,8 +1,7 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .edit__inventory {
-  width: 90%;
-  margin: auto;
   &__details {
     display: flex;
     flex-direction: column;
@@ -24,6 +23,7 @@
 }
 
 .header {
+  padding: 0 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,46 +41,108 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 1rem;
   }
 }
 
-.item__input {
-  margin-top: 0.5rem;
-  border: solid 1px;
-  padding: 1rem;
+.item {
+  &__title {
+    padding: 0 1rem;
+  }
+
+  &__input {
+    margin-top: 0.5rem;
+    border: solid 1px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 20px;
+  }
 }
 .description__input {
   margin-top: 0.5rem;
   border: solid 1px;
-  padding: 5rem;
+  padding: 0.5rem 1rem 4rem 1rem;
+  display: flex;
+  text-align: flex-start;
+  border-radius: 20px;
 }
 
 .dropdown {
   border-radius: 20px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
 }
 
 .avaliability {
-  margin-bottom: 2rem;
+  border-top: solid 2px $divider-lines;
+  margin: 2rem 0;
+  padding: 0 1rem;
 
   &__form {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: column;
   }
+}
+
+.radio {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .submit__wrapper {
   display: flex;
   justify-content: space-evenly;
-  margin: 3rem 0;
+  background-color: #f7f8f9;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .btn {
   &__save {
-    padding: 1rem;
+    padding: 1rem 2rem;
+    background-color: $instock-indigo;
+    color: $instock-white;
+    border-color: $instock-indigo;
+    border-radius: 20px;
+    font-size: 1rem;
   }
 
   &__cancel {
-    padding: 1rem;
+    padding: 1rem 2rem;
+    background-color: $instock-white;
+    color: $placeholder-text;
+    border: solid 2px $divider-lines;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .warehouse {
+    &__label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
   }
 }
