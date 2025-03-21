@@ -2,15 +2,24 @@ import "./Modal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg";
 import axios from "axios";
 
-export default function Modal({ setIsModalOpen, selectedWarehouse }) {
+export default function Modal({
+  setIsModalOpen,
+  selectedItem,
+  inventoriesPage,
+  warehousesPage,
+}) {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
-  const handleDeleteWarehouse = async (warehouseId) => {
+  const handleDeleteItem = async (item) => {
+    const itemId = item.id;
+
     try {
       await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/warehouses/${warehouseId}`
+        `${import.meta.env.VITE_API_BASE_URL}/${
+          inventoriesPage ? "inventories" : "warehouses"
+        }/${itemId}`
       );
     } catch (error) {
       console.error(error);
@@ -29,7 +38,13 @@ export default function Modal({ setIsModalOpen, selectedWarehouse }) {
           />
         </div>
         <div className="modal__main">
-          <h2 className="modal__title">Delete Washington warehouse?</h2>
+          {inventoriesPage && <div>Hello</div>}
+          {warehousesPage && (
+            <h2 className="modal__title">
+              Delete {selectedItem.name} warehouse?
+            </h2>
+          )}
+
           <p className="modal__text">
             Please confirm that you’d like to delete the Washington from the
             list of warehouses. You won’t be able to undo this action.
@@ -41,7 +56,7 @@ export default function Modal({ setIsModalOpen, selectedWarehouse }) {
               </button>
               <button
                 className="modal__btn modal__btn--highlight"
-                onClick={() => handleDeleteWarehouse(selectedWarehouse)}
+                onClick={() => handleDeleteItem(selectedItem)}
               >
                 Delete
               </button>
