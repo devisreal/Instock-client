@@ -59,6 +59,14 @@
     border: solid 1px;
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 20px;
+
+    &:focus {
+      border-color: $instock-indigo;
+    }
+
+    &--error {
+      border-color: $label-outofstock;
+    }
   }
 }
 .description__input {
@@ -68,12 +76,20 @@
   display: flex;
   text-align: flex-start;
   border-radius: 20px;
+
+  &--error {
+    border-color: $label-outofstock;
+  }
 }
 
 .dropdown {
   border-radius: 20px;
   padding: 0.5rem 1rem 0.5rem 1rem;
   width: 100%;
+
+  &:focus {
+    border-color: $instock-indigo;
+  }
 }
 
 .avaliability {
@@ -144,5 +160,23 @@
       margin-bottom: 2rem;
       width: 100%;
     }
+  }
+}
+
+.error {
+  &__item {
+    color: $label-outofstock;
+    padding: 0 1rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    color: $label-outofstock;
+    gap: 5px;
   }
 }

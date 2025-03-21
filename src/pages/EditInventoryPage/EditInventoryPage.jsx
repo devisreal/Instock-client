@@ -3,6 +3,7 @@ import back from "../../assets/icons/arrow_back-24px.svg";
 import "./EditInventoryPage.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import errorSVG from "../../assets/icons/error-24px.svg";
 
 export default function EditInventoryPage() {
   const [inventoryItem, setInventoryItem] = useState(null);
@@ -62,11 +63,11 @@ export default function EditInventoryPage() {
 
     if (!inventoryItem.item_name) {
       formIsValid = false;
-      errors["item_name"] = "You must enter a name for the item";
+      errors["item_name"] = "This field is required";
     }
     if (!inventoryItem.description) {
       formIsValid = false;
-      errors["description"] = "You must enter a description for the item";
+      errors["description"] = "This field is required";
     }
     if (!formIsValid) {
       setFormErrors(errors);
@@ -127,19 +128,34 @@ export default function EditInventoryPage() {
             name="item_name"
             onChange={changeHandler}
             value={inventoryItem.item_name}
-            className="item__input"
+            className={`item__input ${
+              formErrors.item_name ? "item__input--error" : ""
+            }`}
           />
         </label>
-        {formErrors.item_name && <p>{formErrors.item_name}</p>}
+        {formErrors.item_name && (
+          <p className="error__item">
+            {" "}
+            <img src={errorSVG} alt="error" />
+            {formErrors.item_name}
+          </p>
+        )}
         <label className="form__label">
           Description {""}
           <textarea
             name="description"
             onChange={changeHandler}
             value={inventoryItem.description}
-            className="description__input"
+            className={`description__input ${
+              formErrors.description ? "description__input--error" : ""
+            }`}
           ></textarea>
-          {formErrors.description && <p>{formErrors.description}</p>}
+          {formErrors.description && (
+            <p className="error__description">
+              {" "}
+              <img src={errorSVG} alt="error" /> {formErrors.description}
+            </p>
+          )}
         </label>
         <label className="form__label">
           <p className="form__subtitle">Category</p>
