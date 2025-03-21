@@ -4,9 +4,14 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 
-export default function Warehouse({ warehouse, setDeleteStatus }) {
+export default function Warehouse({
+  warehouse,
+  setIsModalOpen,
+  setSelectedWarehouse,
+}) {
   const handleDeleteBtn = () => {
-    setDeleteStatus(true);
+    setIsModalOpen(true);
+    setSelectedWarehouse(warehouse.id);
   };
 
   return (

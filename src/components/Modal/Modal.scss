@@ -13,14 +13,25 @@ body {
   padding: 1rem;
   position: fixed;
   min-width: 21.4375rem;
+  z-index: 100;
 
   @include tablet {
-    width: 90%;
-    height: 16.375rem;
+    width: 75%;
+    height: 17.5rem;
+    display: block;
     margin: 0 auto;
+    top: 35%;
+    max-width: 43.125rem;
   }
 
   &__wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__main {
     max-width: 450px;
     margin: 0 auto;
   }
@@ -35,6 +46,7 @@ body {
     line-height: 2.25rem;
     font-weight: 400;
     width: 70%;
+    margin-top: 0;
   }
 
   &__footer {
@@ -53,6 +65,7 @@ body {
 
     @include tablet {
       display: block;
+      padding-bottom: 1rem;
     }
   }
 

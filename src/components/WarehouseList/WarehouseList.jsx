@@ -5,7 +5,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Warehouse from "../Warehouse/Warehouse";
 
-export default function WarehouseList({ setDeleteStatus }) {
+export default function WarehouseList({
+  setSelectedWarehouse,
+  setIsModalOpen,
+}) {
   const [warehouses, setWarehouse] = useState(null);
 
   const fetchWarehouses = async () => {
@@ -69,12 +72,14 @@ export default function WarehouseList({ setDeleteStatus }) {
           </li>
         </ul>
       </div>
+
       {warehouses.map((warehouse) => {
         return (
           <Warehouse
+            setSelectedWarehouse={setSelectedWarehouse}
             key={warehouse.id}
             warehouse={warehouse}
-            setDeleteStatus={setDeleteStatus}
+            setIsModalOpen={setIsModalOpen}
           />
         );
       })}
