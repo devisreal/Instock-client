@@ -69,6 +69,10 @@ export default function EditInventoryPage() {
       formIsValid = false;
       errors["description"] = "This field is required";
     }
+    if (!inventoryItem.quantity && inventoryItem.status === "In Stock") {
+      formIsValid = false;
+      errors["quantity"] = "This field is required";
+    }
     if (!formIsValid) {
       setFormErrors(errors);
       return;
@@ -207,13 +211,23 @@ export default function EditInventoryPage() {
                 <label className="quantity">
                   <p className="quantity__title">Quantity</p>
                   <input
-                    className="dropdown"
+                    className={`dropdown dropdown--quantity ${
+                      formErrors.description
+                        ? "dropdown dropdown--quantity--error"
+                        : ""
+                    }`}
                     type="text"
                     name="quantity"
                     onChange={changeHandler}
                     defaultValue={inventoryItem.quantity}
                   />
                 </label>
+              )}
+              {formErrors.quantity && (
+                <p className="error__description">
+                  {" "}
+                  <img src={errorSVG} alt="error" /> {formErrors.quantity}
+                </p>
               )}
             </div>
             <label className="warehouse__label">

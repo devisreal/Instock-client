@@ -2,6 +2,12 @@
 @use "../../styles/partials/mixins" as *;
 
 .edit__inventory {
+  position: relative;
+  bottom: 5rem;
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
+
   &__details {
     display: flex;
     flex-direction: column;
@@ -104,6 +110,16 @@
   &:focus {
     border-color: $instock-indigo;
   }
+
+  &--quantity {
+    @include tablet {
+      width: 50%;
+
+      &--error {
+        border-color: $label-outofstock;
+      }
+    }
+  }
 }
 
 .avaliability {
@@ -126,7 +142,7 @@
     flex-direction: column;
 
     @include tablet {
-      width: 50%;
+      width: 70%;
     }
   }
 }
@@ -135,6 +151,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  margin-bottom: 1rem;
 
   @include tablet {
     padding-left: 0;
@@ -153,6 +170,7 @@
     justify-content: flex-end;
     gap: 1rem;
     padding-right: 1rem;
+    margin-top: 1rem;
   }
 }
 
