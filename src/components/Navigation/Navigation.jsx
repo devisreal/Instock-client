@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 export default function Navigation() {
   return (
     <section className="nav">
-      <Link to="/">
+      <Link className="nav__logo-link" to="/">
         <img src={Logo} alt="InStock Logo" className="nav__logo" />
       </Link>
       <div className="nav__container">
