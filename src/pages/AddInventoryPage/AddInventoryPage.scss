@@ -1,0 +1,249 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit__inventory {
+  position: relative;
+  bottom: 5rem;
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 2px $divider-lines;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 2px $divider-lines;
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 1rem;
+  }
+}
+
+.item {
+  &__title {
+    padding: 0 1rem;
+  }
+
+  &__input {
+    margin-top: 0.5rem;
+    border: solid 1px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 20px;
+
+    &:focus {
+      border-color: $instock-indigo;
+    }
+
+    &--error {
+      border-color: $label-outofstock;
+    }
+  }
+
+  &__form {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__details {
+    @include tablet {
+      width: 45%;
+      margin: auto;
+    }
+  }
+}
+.description__input {
+  margin-top: 0.5rem;
+  border: solid 1px;
+  padding: 0.5rem 1rem 4rem 1rem;
+  display: flex;
+  text-align: flex-start;
+  border-radius: 20px;
+
+  &--error {
+    border-color: $label-outofstock;
+  }
+}
+
+.dropdown {
+  border-radius: 20px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
+
+  &:focus {
+    border-color: $instock-indigo;
+  }
+
+  &--quantity {
+    @include tablet {
+      width: 50%;
+
+      &--error {
+        border-color: $label-outofstock;
+      }
+    }
+  }
+}
+
+.avaliability {
+  border-top: solid 2px $divider-lines;
+  margin: 2rem 0;
+  padding: 0 1rem;
+
+  @include tablet {
+    width: 48%;
+    border-top: none;
+    border-left: solid 2px $divider-lines;
+    margin: 0;
+    padding: 0 2rem;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: column;
+
+    @include tablet {
+      width: 70%;
+    }
+  }
+}
+
+.radio {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @include tablet {
+    padding-left: 0;
+    justify-content: space-between;
+  }
+}
+
+.submit__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f7f8f9;
+  align-items: center;
+  padding: 1rem 0;
+
+  @include tablet {
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.btn {
+  &__save {
+    padding: 0.5rem 3.5rem;
+    background-color: $instock-indigo;
+    color: $instock-white;
+    border-color: $instock-indigo;
+    border-radius: 20px;
+    font-size: 1rem;
+
+    @include tablet {
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__cancel {
+    padding: 0.5rem 3.5rem;
+    background-color: $instock-white;
+    color: $placeholder-text;
+    border: solid 2px $divider-lines;
+    border-radius: 20px;
+    font-size: 1rem;
+
+    @include tablet {
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .warehouse {
+    &__label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+}
+
+.error {
+  &__item {
+    color: $label-outofstock;
+    padding: 0 1rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    color: $label-outofstock;
+    gap: 5px;
+  }
+}
