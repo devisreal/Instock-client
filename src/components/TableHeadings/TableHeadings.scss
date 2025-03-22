@@ -1,0 +1,48 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.table-headings {
+  display: none;
+  background-color: rgba(237, 235, 235, 0.34);
+  height: 2.5rem;
+
+  @include tablet {
+    display: flex;
+    padding-left: 3rem;
+    min-width: 125px;
+  }
+
+  &__list {
+    font-size: 0.75rem;
+    display: flex;
+    gap: 1rem;
+
+    @include tablet {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__table-heading {
+    display: flex;
+
+    @include tablet {
+      justify-content: center;
+      width: 20%;
+      white-space: nowrap;
+    }
+
+    &--centre {
+      padding-left: 2rem;
+    }
+
+    &--first {
+      padding-right: 2rem;
+      width: 6rem;
+    }
+  }
+
+  &__sort-icon {
+    width: 1rem;
+  }
+}

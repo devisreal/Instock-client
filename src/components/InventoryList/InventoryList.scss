@@ -22,46 +22,4 @@
   :last-child {
     border-bottom: none;
   }
-
-  &__table-headings {
-    display: none;
-    background-color: rgba(237, 235, 235, 0.34);
-    height: 2rem;
-
-    @include tablet {
-      display: flex;
-      align-items: center;
-      padding-left: 1.5rem;
-    }
-  }
-
-  &__table-headings-list {
-    font-size: 0.75rem;
-    display: flex;
-    gap: 1rem;
-
-    @include tablet {
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-  }
-
-  &__table-heading {
-    display: flex;
-
-    @include tablet {
-      width: 22%;
-      justify-content: center;
-      width: 20%;
-    }
-
-    &--wide {
-      min-width: 10rem;
-    }
-  }
-
-  &__sort-icon {
-    width: 1rem;
-  }
 }

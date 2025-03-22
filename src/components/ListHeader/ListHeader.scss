@@ -5,13 +5,13 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px $divider-lines solid;
-  height: 6.5694rem;
 
   @include tablet {
     border: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 6.5694rem;
   }
 
   &__title {

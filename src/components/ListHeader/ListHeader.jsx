@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./ListHeader.scss";
 
-export default function ListHeader(inventoriesPage, warehousesPage) {
+export default function ListHeader(page) {
+  const { warehousesPage } = page;
+
   return (
     <header className="list-header">
       {warehousesPage ? (
