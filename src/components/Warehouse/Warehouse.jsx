@@ -62,11 +62,13 @@ export default function Warehouse({
           alt="Bin warehouse icon"
           onClick={handleDeleteBtn}
         />
-        <img
-          className="warehouse-main__icon"
-          src={editIcon}
-          alt="Edit warehouse icon"
-        />
+        <Link to={`/warehouses/${warehouse.id}/edit`}>
+          <img
+            className="warehouse-main__icon"
+            src={editIcon}
+            alt="Edit warehouse icon"
+          />
+        </Link>
       </div>
     </div>
   );
