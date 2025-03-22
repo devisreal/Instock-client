@@ -11,7 +11,7 @@ export default function Warehouse({
 }) {
   const handleDeleteBtn = () => {
     setIsModalOpen(true);
-    setSelectedWarehouse(warehouse.id);
+    setSelectedWarehouse(warehouse);
   };
 
   return (

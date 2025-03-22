@@ -12,6 +12,18 @@
   }
 }
 
+@mixin in-stock {
+  border-radius: 1rem;
+  color: $label-instock;
+  background-color: #eef6f4;
+}
+
+@mixin out-of-stock {
+  border-radius: 1rem;
+  color: $label-outofstock;
+  background-color: #fbf3ee;
+}
+
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;

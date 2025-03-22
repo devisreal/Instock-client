@@ -14,8 +14,9 @@ export default function WarehousesPage({ setIsModalOpen, isModalOpen }) {
       />
       {isModalOpen && (
         <Modal
-          selectedWarehouse={selectedWarehouse}
+          selectedItem={selectedWarehouse}
           setIsModalOpen={setIsModalOpen}
+          warehousesPage={true}
         />
       )}
     </>

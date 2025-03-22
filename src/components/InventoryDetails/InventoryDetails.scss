@@ -131,16 +131,13 @@ p {
   &__status {
     padding-left: 0.5rem;
     font-weight: bold;
+
     &--green {
-      border-radius: 1rem;
-      color: $label-instock;
-      background-color: $background-primary;
+      @include in-stock;
     }
 
     &--red {
-      border-radius: 1rem;
-      color: $label-outofstock;
-      background-color: $background-primary;
+      @include out-of-stock;
     }
   }
 }
