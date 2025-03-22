@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Warehouse from "../Warehouse/Warehouse";
+import ListHeader from "../ListHeader/ListHeader";
 
 export default function WarehouseList({
   setSelectedWarehouse,
@@ -32,22 +33,7 @@ export default function WarehouseList({
 
   return (
     <section className="warehouse-list">
-      <header className="warehouse-list__header">
-        <h1 className="warehouse-list__title">Warehouses</h1>
-        <div className="warehouse-list__cta-wrapper">
-          <input
-            className="warehouse-list__search-bar"
-            type="search"
-            name="searchbar"
-            placeholder="Search..."
-          />
-          <button className="warehouse-list__button">
-            <Link className="warehouse-list__link" to="/warehouses/add">
-              + Add New Warehouse{" "}
-            </Link>
-          </button>
-        </div>
-      </header>
+      <ListHeader warehousesPage={true} />
       <div className="warehouse-list__table-headings">
         <ul className="warehouse-list__table-headings-list">
           <li className="warehouse-list__table-heading">
