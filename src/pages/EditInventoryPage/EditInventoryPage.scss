@@ -68,6 +68,20 @@
       border-color: $label-outofstock;
     }
   }
+
+  &__form {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__details {
+    @include tablet {
+      width: 45%;
+      margin: auto;
+    }
+  }
 }
 .description__input {
   margin-top: 0.5rem;
@@ -97,11 +111,23 @@
   margin: 2rem 0;
   padding: 0 1rem;
 
+  @include tablet {
+    width: 48%;
+    border-top: none;
+    border-left: solid 2px $divider-lines;
+    margin: 0;
+    padding: 0 2rem;
+  }
+
   &__form {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     flex-direction: column;
+
+    @include tablet {
+      width: 50%;
+    }
   }
 }
 
@@ -109,6 +135,11 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+
+  @include tablet {
+    padding-left: 0;
+    justify-content: space-between;
+  }
 }
 
 .submit__wrapper {
@@ -117,25 +148,43 @@
   background-color: #f7f8f9;
   align-items: center;
   padding: 1rem 0;
+
+  @include tablet {
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .btn {
   &__save {
-    padding: 1rem 2rem;
+    padding: 0.5rem 3.5rem;
     background-color: $instock-indigo;
     color: $instock-white;
     border-color: $instock-indigo;
     border-radius: 20px;
     font-size: 1rem;
+
+    @include tablet {
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__cancel {
-    padding: 1rem 2rem;
+    padding: 0.5rem 3.5rem;
     background-color: $instock-white;
     color: $placeholder-text;
     border: solid 2px $divider-lines;
     border-radius: 20px;
     font-size: 1rem;
+
+    @include tablet {
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 

@@ -116,123 +116,129 @@ export default function EditInventoryPage() {
           <Link className="back" to={"/"}>
             <img src={back} alt="back to homepage" />
           </Link>
-          <h2> Edit Inventory Item</h2>
+          <h1> Edit Inventory Item</h1>
         </section>
       </div>
-      <h3 className="item__title">Item Details</h3>
       <form className="form" onSubmit={submitHandler}>
-        <label className="form__label">
-          Item Name
-          {""}
-          <input
-            name="item_name"
-            onChange={changeHandler}
-            value={inventoryItem.item_name}
-            className={`item__input ${
-              formErrors.item_name ? "item__input--error" : ""
-            }`}
-          />
-        </label>
-        {formErrors.item_name && (
-          <p className="error__item">
-            {" "}
-            <img src={errorSVG} alt="error" />
-            {formErrors.item_name}
-          </p>
-        )}
-        <label className="form__label">
-          Description {""}
-          <textarea
-            name="description"
-            onChange={changeHandler}
-            value={inventoryItem.description}
-            className={`description__input ${
-              formErrors.description ? "description__input--error" : ""
-            }`}
-          ></textarea>
-          {formErrors.description && (
-            <p className="error__description">
-              {" "}
-              <img src={errorSVG} alt="error" /> {formErrors.description}
-            </p>
-          )}
-        </label>
-        <label className="form__label">
-          <p className="form__subtitle">Category</p>
-          <select
-            defaultValue={inventoryItem.category}
-            className="dropdown"
-            name="category"
-            onChange={changeHandler}
-          >
-            {categories.map((category, index) => {
-              return (
-                <option key={index} value={category}>
-                  {category}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <div className="avaliability">
-          <h3>Item Avaliability</h3>
-          <p>Status</p>
-          <div className="avaliability__form">
-            <section className="radio">
-              <label>
-                <input
-                  type="radio"
-                  defaultChecked={inventoryItem.status === "In Stock"}
-                  name="status"
-                  value="In Stock"
-                  onChange={changeHandler}
-                />{" "}
-                In Stock
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="status"
-                  value="Out of Stock"
-                  defaultChecked={inventoryItem.status === "Out of Stock"}
-                  onChange={changeHandler}
-                />{" "}
-                Out of Stock
-              </label>
-            </section>
-            {inventoryItem.status === "In Stock" && (
-              <label className="quantity">
-                <p className="quantity__title">Quantity</p>
-                <input
-                  className="dropdown"
-                  type="text"
-                  name="quantity"
-                  onChange={changeHandler}
-                  defaultValue={inventoryItem.quantity}
-                />
-              </label>
+        <div className="item__form">
+          <div className="item__details">
+            <h2 className="item__title">Item Details</h2>
+            <label className="form__label">
+              Item Name
+              {""}
+              <input
+                name="item_name"
+                onChange={changeHandler}
+                value={inventoryItem.item_name}
+                className={`item__input ${
+                  formErrors.item_name ? "item__input--error" : ""
+                }`}
+              />
+            </label>
+            {formErrors.item_name && (
+              <p className="error__item">
+                {" "}
+                <img src={errorSVG} alt="error" />
+                {formErrors.item_name}
+              </p>
             )}
+            <label className="form__label">
+              Description {""}
+              <textarea
+                name="description"
+                onChange={changeHandler}
+                value={inventoryItem.description}
+                className={`description__input ${
+                  formErrors.description ? "description__input--error" : ""
+                }`}
+              ></textarea>
+              {formErrors.description && (
+                <p className="error__description">
+                  {" "}
+                  <img src={errorSVG} alt="error" /> {formErrors.description}
+                </p>
+              )}
+            </label>
+            <label className="form__label">
+              <p className="form__subtitle">Category</p>
+              <select
+                defaultValue={inventoryItem.category}
+                className="dropdown"
+                name="category"
+                onChange={changeHandler}
+              >
+                {categories.map((category, index) => {
+                  return (
+                    <option key={index} value={category}>
+                      {category}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
           </div>
-          <label className="warehouse__label">
-            <p className="form__subtitle">Warehouse</p>
-            <select
-              defaultValue={inventoryItemWarehouse.warehouse_name}
-              className="dropdown"
-              name="warehouse_id"
-              onChange={changeHandler}
-            >
-              {warehouses.map((warehouse, index) => {
-                return (
-                  <option key={index} value={warehouse.id}>
-                    {warehouse.warehouse_name}
-                  </option>
-                );
-              })}
-            </select>
-          </label>
+          <div className="avaliability">
+            <h2>Item Avaliability</h2>
+            <p>Status</p>
+            <div className="avaliability__form">
+              <section className="radio">
+                <label>
+                  <input
+                    type="radio"
+                    defaultChecked={inventoryItem.status === "In Stock"}
+                    name="status"
+                    value="In Stock"
+                    onChange={changeHandler}
+                  />{" "}
+                  In Stock
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="status"
+                    value="Out of Stock"
+                    defaultChecked={inventoryItem.status === "Out of Stock"}
+                    onChange={changeHandler}
+                  />{" "}
+                  Out of Stock
+                </label>
+              </section>
+              {inventoryItem.status === "In Stock" && (
+                <label className="quantity">
+                  <p className="quantity__title">Quantity</p>
+                  <input
+                    className="dropdown"
+                    type="text"
+                    name="quantity"
+                    onChange={changeHandler}
+                    defaultValue={inventoryItem.quantity}
+                  />
+                </label>
+              )}
+            </div>
+            <label className="warehouse__label">
+              <p className="form__subtitle">Warehouse</p>
+              <select
+                defaultValue={inventoryItemWarehouse.warehouse_name}
+                className="dropdown"
+                name="warehouse_id"
+                onChange={changeHandler}
+              >
+                {warehouses.map((warehouse, index) => {
+                  return (
+                    <option key={index} value={warehouse.id}>
+                      {warehouse.warehouse_name}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
+          </div>
         </div>
         <div className="submit__wrapper">
-          <p className="btn__cancel">Cancel</p>
+          <Link className="back" to={"/"}>
+            <p className="btn__cancel">Cancel</p>
+          </Link>
           <button className="btn__save">Save</button>
         </div>
       </form>

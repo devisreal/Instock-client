@@ -1,4 +1,6 @@
 @use "../partials/typography";
+@use "../partials/mixins" as *;
+@use "../partials/variables";
 
 *,
 * ::before,
@@ -12,16 +14,61 @@ body {
 
 textarea {
   font-family: "Titillium";
+  font-size: 0.813rem;
+
+  @include tablet {
+    font-size: 0.875rem;
+  }
 }
 
 input {
   font-family: "Titillium";
+  font-size: 0.813rem;
+  @include tablet {
+    font-size: 0.875rem;
+  }
 }
 
 select {
   font-family: "Titillium";
+  font-size: 0.813rem;
+  @include tablet {
+    font-size: 0.875rem;
+  }
 }
 
 button {
   font-family: "Titillium";
+  font-size: 0.813rem;
+  @include tablet {
+    font-size: 0.875rem;
+  }
+}
+
+label {
+  font-family: "Titillium";
+  font-size: 0.813rem;
+  @include tablet {
+    font-size: 0.875rem;
+  }
+}
+
+h1 {
+  font-size: 1.75rem;
+
+  @include tablet {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 1.25rem;
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
 }
