@@ -1,0 +1,143 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+h3 {
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.inventory-details {
+  box-shadow: 1px 1px 10px $divider-lines;
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  position: relative;
+  bottom: 6rem;
+  background-color: white;
+
+  @include tablet {
+    margin: 0 2rem;
+  }
+
+  @include desktop {
+    margin: 0 10rem;
+  }
+
+  &__banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    border-bottom: 2px solid $divider-lines;
+
+    @include tablet {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    background-color: $instock-white;
+    border: none;
+  }
+
+  &__header {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: $instock-indigo;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include tablet {
+      border-radius: 2rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &__button-text {
+    display: none;
+
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  &__card {
+    padding: 1rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__left-side {
+    @include tablet {
+      width: 55%;
+      border-right: 2px solid $divider-lines;
+      padding-right: 1rem;
+    }
+  }
+
+  &__right-side {
+    @include tablet {
+      width: 40%;
+    }
+  }
+
+  &__title {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: $placeholder-text;
+
+    &--top {
+      margin-top: 2rem;
+    }
+  }
+
+  &__status {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+
+    @include desktop {
+      width: 70%;
+    }
+  }
+
+  &__status {
+    padding-left: 0.5rem;
+    font-weight: bold;
+
+    &--green {
+      @include in-stock;
+    }
+
+    &--red {
+      @include out-of-stock;
+    }
+  }
+}

@@ -1,18 +1,20 @@
 import "./Navigation.scss";
 import Logo from "../../assets/logo/InStock-Logo.svg";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navigation() {
   return (
     <section className="nav">
-      <img src={Logo} className="nav__logo" />
+      <Link to="/">
+        <img src={Logo} alt="InStock Logo" className="nav__logo" />
+      </Link>
       <div className="nav__container">
-        <Link to="/warehouses" className="nav__title">
+        <NavLink to="/warehouses" className="nav__title">
           Warehouses
-        </Link>
-        <Link to="/inventories" className="nav__title">
+        </NavLink>
+        <NavLink to="/inventories" className="nav__title">
           Inventory
-        </Link>
+        </NavLink>
       </div>
     </section>
   );

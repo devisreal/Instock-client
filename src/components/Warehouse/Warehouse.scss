@@ -1,0 +1,93 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-main {
+  border-bottom: 1px $divider-lines solid;
+  margin: 0 auto;
+
+  @include tablet {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0 3rem;
+  }
+
+  &:hover {
+    background-color: rgb(240, 244, 253);
+  }
+
+  &__info-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+
+    @include tablet {
+      justify-content: space-evenly;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__info-col {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+
+    @include tablet {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+
+  &__info-subheading {
+    color: $placeholder-text;
+    margin-bottom: 0.2rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__link-wrapper {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__link {
+    color: $instock-indigo;
+  }
+
+  &__info-item {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__info {
+    margin: 0;
+
+    &--block {
+      display: block;
+    }
+  }
+
+  &__icons-wrapper {
+    margin: 0.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      gap: 1rem;
+    }
+  }
+
+  &__icon {
+    width: 1.75rem;
+    cursor: pointer;
+  }
+}

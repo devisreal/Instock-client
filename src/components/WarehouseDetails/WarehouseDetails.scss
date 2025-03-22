@@ -4,6 +4,7 @@
 .warehouse {
   width: 90%;
   margin: auto;
+
   &__details {
     display: flex;
     flex-direction: column;
@@ -37,6 +38,7 @@
 .back__link {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .address {
