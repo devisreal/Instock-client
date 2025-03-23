@@ -1,5 +1,5 @@
 import "../AddInventoryPage/AddInventoryPage.scss";
-import { data, Link, useParams } from "react-router-dom";
+import { data, Link, useNavigate, useParams } from "react-router-dom";
 import back from "../../assets/icons/arrow_back-24px.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -19,6 +19,7 @@ export default function AddInventoryPage() {
   const [categories, setCategories] = useState(null);
   const [warehouses, setWarehouses] = useState(null);
   const [formErrors, setFormErrors] = useState({});
+  const navigate = useNavigate();
 
   const changeHandler = (e) => {
     const updatedInventoryItem = {
@@ -90,6 +91,7 @@ export default function AddInventoryPage() {
         inventoryToSubmit
       );
       setFormErrors(errors);
+      navigate("/inventories");
     } catch (error) {
       throw error;
     }

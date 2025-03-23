@@ -22,6 +22,7 @@ export default function Modal({
         }/${itemId}`
       );
       setIsModalOpen(false);
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
