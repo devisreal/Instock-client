@@ -1,31 +1,193 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+// .warehouse {
+//   width: 90%;
+//   margin: auto;
+
+//   &__details {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//   }
+
+//   &__nav {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     border-bottom: solid 2px $divider-lines;
+//     margin-bottom: 1rem;
+//   }
+
+//   &__title {
+//     display: flex;
+//     flex-direction: row;
+//     gap: 1rem;
+//     flex-wrap: wrap;
+//     align-items: center;
+//   }
+
+//   &__details {
+//     @include tablet {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//   }
+// }
+// .back__link {
+//   display: flex;
+//   align-items: center;
+//   cursor: pointer;
+// }
+
+// .address {
+//   &__title {
+//     color: $placeholder-text;
+//   }
+
+//   @include tablet {
+//     max-width: 60%;
+//   }
+// }
+
+// .edit {
+//   display: flex;
+//   align-items: center;
+//   gap: 4px;
+//   background-color: $instock-indigo;
+//   color: $instock-white;
+//   border-radius: 50px;
+//   border: solid $instock-indigo;
+//   padding: 0.5rem;
+
+//   @include tablet {
+//     border-radius: 20px;
+//     padding: 0px 16px;
+//   }
+// }
+
+// .btn__text {
+//   display: none;
+
+//   @include tablet {
+//     display: flex;
+//   }
+// }
+
+// .contact {
+//   display: flex;
+//   flex-direction: row;
+//   gap: 2rem;
+//   border-bottom: solid 2px #bdc5d5;
+
+//   &__title {
+//     color: $placeholder-text;
+//   }
+
+//   @include tablet {
+//     border-left: solid 2px #bdc5d5;
+//     padding-left: 1rem;
+//     width: 60%;
+//     justify-content: center;
+//     justify-content: space-evenly;
+//     border-bottom: none;
+//   }
+// }
+
+// .name {
+//   &__title {
+//     color: $placeholder-text;
+//   }
+// }
+
 .warehouse {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
+  min-width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 3px 0px;
+  border-radius: 5px;
+  position: relative;
+  bottom: 5rem;
+  background-color: $instock-white;
+  padding: 0 2rem;
+
+  @include tablet {
+    bottom: 6.6rem;
+  }
+
+  @include desktop {
+    width: 80%;
+  }
+
+  //   :last-child {
+  //     border-bottom: none;
+  //   }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px $divider-lines solid;
+    height: 7rem;
+
+    @include tablet {
+      //   border: none;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-title {
+      font-size: 1.85rem;
+      line-height: 2.25rem;
+      padding: 1rem 1.5rem 0;
+      display: inline-flex;
+      gap: 1rem;
+
+      @include tablet {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        padding: 0;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &__button {
+    font-size: 0.95rem;
+    color: $instock-white;
+    background-color: $instock-indigo;
+    border: none;
+    height: 2.25rem;
+    border-radius: 20px;
+    max-width: 25.75rem;
+    width: fit-content;
+    cursor: pointer;
+
+    @include tablet {
+      height: 2.375rem;
+      width: fit-content;
+      padding: 0 1.5rem;
+      padding-top: 0.2rem;
+    }
+
+    @include desktop {
+    }
+
+    &-link {
+      color: $instock-white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+  }
 
   &__details {
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  &__nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid 2px $divider-lines;
-    margin-bottom: 1rem;
-  }
-
-  &__title {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
   }
 
   &__details {
@@ -34,11 +196,6 @@
       flex-direction: row;
     }
   }
-}
-.back__link {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 }
 
 .address {
