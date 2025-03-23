@@ -75,6 +75,7 @@ export default function Inventory({
         <Link
           className="inventory-main__edit-link"
           to={`/inventories/${inventory.id}/edit`}
+        >
           <img
             className="inventory-main__icon"
             src={editIcon}
