@@ -9,13 +9,17 @@
   font-family: Titillium;
 }
 
+body {
+  margin: 0;
+}
+
 ul {
   list-style: none;
   padding: 0;
 }
 
-body {
-  margin: 0;
+button {
+  cursor: pointer;
 }
 
 textarea {

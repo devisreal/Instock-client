@@ -108,10 +108,10 @@ export default function AddInventoryPage() {
     <div className="edit__inventory">
       <div className="header">
         <section className="title">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <img src={back} alt="back to homepage" />
           </Link>
-          <h1> AddInventory Item</h1>
+          <h1> Add Inventory Item</h1>
         </section>
       </div>
       <form className="form" onSubmit={submitHandler}>

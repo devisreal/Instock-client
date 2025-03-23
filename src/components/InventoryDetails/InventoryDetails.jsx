@@ -51,7 +51,7 @@ export default function InventoryDetails() {
           </button>
           <h1 className="inventory-details__header">Television</h1>
         </div>
-        <Link to="/inventories/:id//edit">
+        <Link to={`/inventories/${details.id}/edit`}>
           <button className="inventory-details__button">
             <EditSvg color={"white"} />
             <span className="inventory-details__button-text">Edit</span>

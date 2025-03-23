@@ -117,7 +117,7 @@ export default function EditInventoryPage() {
     <div className="edit__inventory">
       <div className="header">
         <section className="title">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <img src={back} alt="back to homepage" />
           </Link>
           <h1> Edit Inventory Item</h1>
