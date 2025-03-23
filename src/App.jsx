@@ -28,7 +28,10 @@ function App() {
             />
           }
         />
-        <Route path="/warehouses/:id" element={<WarehouseDetailsPage />} />
+        <Route
+          path="/warehouses/:id"
+          element={<WarehouseDetailsPage setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
+        />
         <Route path="/warehouses/:id/edit" element={<EditWarehousePage />} />
         <Route path="/warehouses/add" element={<AddWarehousePage />} />
         <Route

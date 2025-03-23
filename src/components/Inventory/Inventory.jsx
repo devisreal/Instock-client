@@ -8,6 +8,7 @@ export default function Inventory({
   inventory,
   setIsModalOpen,
   setSelectedInventory,
+  warehouseColumn = true,
 }) {
   const handleDeleteBtn = () => {
     setIsModalOpen(true);
@@ -54,12 +55,16 @@ export default function Inventory({
             <p className="inventory-main__info-subheading">QTY</p>
             <div className="inventory-main__info">{inventory.quantity}</div>
           </li>
-          <li className="inventory-main__info-item">
-            <p className="inventory-main__info-subheading">WAREHOUSE</p>
-            <p className="inventory-main__info">{inventory.warehouse_name}</p>
-          </li>
+
+          {warehouseColumn && (
+            <li className="inventory-main__info-item">
+              <p className="inventory-main__info-subheading">WAREHOUSE</p>
+              <p className="inventory-main__info">{inventory.warehouse_name}</p>
+            </li>
+          )}
         </div>
       </ul>
+
       <div className="inventory-main__icons-wrapper">
         <img
           className="inventory-main__icon"
@@ -67,11 +72,13 @@ export default function Inventory({
           alt="Bin inventory icon"
           onClick={handleDeleteBtn}
         />
-        <img
-          className="inventory-main__icon"
-          src={editIcon}
-          alt="Edit inventory icon"
-        />
+        <Link to={`/inventories/${inventory.id}/edit`}>
+          <img
+            className="inventory-main__icon"
+            src={editIcon}
+            alt="Edit inventory icon"
+          />
+        </Link>
       </div>
     </div>
   );
