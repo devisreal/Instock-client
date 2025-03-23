@@ -30,7 +30,10 @@ function App() {
             />
           }
         />
-        <Route path="/warehouses/:id" element={<WarehouseDetailsPage />} />
+        <Route
+          path="/warehouses/:id"
+          element={<WarehouseDetailsPage setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
+        />
         <Route path="/warehouses/:id/edit" element={<EditWarehousePage />} />
         <Route path="/warehouses/add" element={<AddWarehousePage />} />
         <Route
@@ -45,6 +48,7 @@ function App() {
         <Route path="/inventories/:id" element={<InventoryDetailsPage />} />
         <Route path="/inventories/:id/edit" element={<EditInventoryPage />} />
         <Route path="/inventories/add" element={<AddInventoryPage />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>

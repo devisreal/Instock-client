@@ -1,0 +1,49 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit-warehouse {
+  width: 90%;
+  margin: 0 auto;
+  min-width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 3px 0px;
+  border-radius: 5px;
+  position: relative;
+  bottom: 5rem;
+  background-color: $instock-white;
+
+  @include tablet {
+    bottom: 6.6rem;
+  }
+
+  @include desktop {
+    width: 80%;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px $divider-lines solid;
+    height: 7rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-title {
+      font-size: 1.85rem;
+      line-height: 2.25rem;
+      padding: 1rem 1.5rem 0;
+      display: inline-flex;
+      gap: 1rem;
+
+      @include tablet {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        padding: 0;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
