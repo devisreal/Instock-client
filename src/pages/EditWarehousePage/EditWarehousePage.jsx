@@ -7,7 +7,6 @@ import "./EditWarehousePage.scss";
 
 export default function EditWarehousePage() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [warehouse, setWarehouse] = useState(null);
 
   const fetchWarehouse = async (params) => {
