@@ -2,8 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .warehouse-main {
-  border-bottom: 1px $divider-lines solid;
-  margin: 0 auto;
+  @include table;
 
   @include tablet {
     display: flex;
@@ -17,16 +16,7 @@
   }
 
   &__info-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 0.5rem;
-
-    @include tablet {
-      justify-content: space-evenly;
-      width: 100%;
-      padding: 0;
-    }
+    @include table-info-container;
   }
 
   &__info-col {
@@ -51,10 +41,7 @@
   }
 
   &__link-wrapper {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
+    @include table-link-wrapper;
   }
 
   &__link {
@@ -62,8 +49,11 @@
   }
 
   &__info-item {
+    padding-bottom: 1rem;
+
     @include tablet {
       width: 50%;
+      padding: 0;
     }
   }
 
@@ -76,10 +66,7 @@
   }
 
   &__icons-wrapper {
-    margin: 0.5rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 1rem;
+    @include table-icons-wrapper;
 
     @include tablet {
       gap: 1rem;
