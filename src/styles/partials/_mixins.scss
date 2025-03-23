@@ -61,3 +61,25 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+@mixin table-headings {
+  display: none;
+  background-color: rgba(237, 235, 235, 0.34);
+  height: 2.5rem;
+
+  @include tablet {
+    display: flex;
+    min-width: 7.8125rem;
+  }
+}
+
+@mixin table-headings-list {
+  font-size: 0.75rem;
+  display: flex;
+  gap: 1rem;
+
+  @include tablet {
+    justify-content: center;
+    width: 100%;
+  }
+}
