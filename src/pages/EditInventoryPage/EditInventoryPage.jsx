@@ -193,6 +193,7 @@ export default function EditInventoryPage() {
                     name="status"
                     value="In Stock"
                     onChange={changeHandler}
+                    className="radio__input"
                   />{" "}
                   In Stock
                 </label>
@@ -203,6 +204,7 @@ export default function EditInventoryPage() {
                     value="Out of Stock"
                     defaultChecked={inventoryItem.status === "Out of Stock"}
                     onChange={changeHandler}
+                    className="radio__input"
                   />{" "}
                   Out of Stock
                 </label>

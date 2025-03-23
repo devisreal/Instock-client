@@ -111,6 +111,8 @@
     border-color: $instock-indigo;
   }
 
+  cursor: pointer;
+
   &--quantity {
     @include tablet {
       width: 50%;
@@ -156,6 +158,10 @@
   @include tablet {
     padding-left: 0;
     justify-content: space-between;
+  }
+
+  &__input {
+    cursor: pointer;
   }
 }
 
