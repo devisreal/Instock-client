@@ -4,6 +4,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Warehouse from "../Warehouse/Warehouse";
+import ListHeader from "../ListHeader/ListHeader";
+import TableHeadings from "../TableHeadings/TableHeadings";
 
 export default function WarehouseList({
   setSelectedWarehouse,
@@ -32,43 +34,8 @@ export default function WarehouseList({
 
   return (
     <section className="warehouse-list">
-      <header className="warehouse-list__header">
-        <h1 className="warehouse-list__title">Warehouses</h1>
-        <div className="warehouse-list__cta-wrapper">
-          <input
-            className="warehouse-list__search-bar"
-            type="search"
-            name="searchbar"
-            placeholder="Search..."
-          />
-          <button className="warehouse-list__button">
-            <Link className="warehouse-list__link" to="/warehouses/add">
-              + Add New Warehouse{" "}
-            </Link>
-          </button>
-        </div>
-      </header>
-      <div className="warehouse-list__table-headings">
-        <ul className="warehouse-list__table-headings-list">
-          <li className="warehouse-list__table-heading">
-            WAREHOUSE
-            <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="warehouse-list__table-heading">
-            ADDRESS
-            <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="warehouse-list__table-heading">
-            CONTACT NAME
-            <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="warehouse-list__table-heading warehouse-list__table-heading--wide">
-            CONTACT INFORMATION{" "}
-            <img className="warehouse-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="warehouse-list__table-heading">ACTIONS </li>
-        </ul>
-      </div>
+      <ListHeader warehousesPage={true} />
+      <TableHeadings warehousesPage={true} />
 
       {warehouses.map((warehouse) => {
         return (
