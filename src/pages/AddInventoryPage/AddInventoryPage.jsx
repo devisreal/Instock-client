@@ -124,7 +124,7 @@ export default function AddInventoryPage() {
               <input
                 name="item_name"
                 onChange={changeHandler}
-                defaultValue={"Item Name"}
+                placeholder={"Item Name"}
                 className={`item__input ${
                   formErrors.item_name ? "item__input--error" : ""
                 }`}
@@ -142,7 +142,7 @@ export default function AddInventoryPage() {
               <textarea
                 name="description"
                 onChange={changeHandler}
-                defaultValue={"Brief description of item"}
+                placeholder={"Brief description of item"}
                 className={`description__input ${
                   formErrors.description ? "description__input--error" : ""
                 }`}
@@ -157,7 +157,7 @@ export default function AddInventoryPage() {
             <label className="form__label">
               <p className="form__subtitle">Category</p>
               <select
-                defaultValue={"Category"}
+                placeholder={"Category"}
                 className="dropdown"
                 name="category"
                 onChange={changeHandler}
@@ -210,7 +210,7 @@ export default function AddInventoryPage() {
                     type="text"
                     name="quantity"
                     onChange={changeHandler}
-                    defaultValue={"Quantity"}
+                    placeholder={"Quantity"}
                   />
                 </label>
               )}
@@ -224,7 +224,7 @@ export default function AddInventoryPage() {
             <label className="warehouse__label">
               <p className="form__subtitle">Warehouse</p>
               <select
-                defaultValue={"Warehouse"}
+                placeholder={"Warehouse"}
                 className="dropdown"
                 name="warehouse_id"
                 onChange={changeHandler}
