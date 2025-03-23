@@ -42,7 +42,7 @@ function App() {
           }
         />
         <Route path="/inventories/:id" element={<InventoryDetailsPage />} />
-        <Route path="/inventories/:id//edit" element={<EditInventoryPage />} />
+        <Route path="/inventories/:id/edit" element={<EditInventoryPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
