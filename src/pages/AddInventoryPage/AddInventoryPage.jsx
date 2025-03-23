@@ -243,7 +243,7 @@ export default function AddInventoryPage() {
           </div>
         </div>
         <div className="submit__wrapper">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <p className="btn__cancel">Cancel</p>
           </Link>
           <button className="btn__save">Save</button>
