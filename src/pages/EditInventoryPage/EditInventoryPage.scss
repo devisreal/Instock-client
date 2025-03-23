@@ -157,6 +157,10 @@
     padding-left: 0;
     justify-content: space-between;
   }
+
+  &__input {
+    cursor: pointer;
+  }
 }
 
 .submit__wrapper {
