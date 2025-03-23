@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { parsePhoneNumber } from "libphonenumber-js/min";
 
 import "./AddWarehouseForm.scss";
@@ -28,10 +28,20 @@ function formatPhoneNumber(phoneNumberString) {
   return null;
 }
 
-export default function AddWarehouseForm() {
+export default function AddWarehouseForm({ warehouseData, isEditing }) {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isEditing && warehouseData) {
+      setFormValues((prev) => ({
+        ...initialFormValues,
+        ...prev,
+        ...warehouseData,
+      }));
+    }
+  }, [warehouseData, isEditing]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -101,12 +111,20 @@ export default function AddWarehouseForm() {
 
   const addWarehouse = async (values) => {
     try {
-      await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/warehouses`,
-        values
-      );
+      if (isEditing) {
+        await axios.patch(
+          `${import.meta.env.VITE_BACKEND_URL}/warehouses/${warehouseData.id}`,
+          formValues
+        );
+      } else {
+        await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/warehouses`,
+          formValues
+        );
+      }
+      navigate("/warehouses");
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -402,7 +420,7 @@ export default function AddWarehouseForm() {
             </button>
 
             <button className="warehouse-form__button" type="submit">
-              + Add Warehouse
+              {isEditing ? "Save" : "+ Add Warehouse"}
             </button>
           </div>
         </fieldset>
