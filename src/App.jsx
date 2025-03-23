@@ -9,6 +9,7 @@ import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsP
 import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 import Navigation from "./components/Navigation/Navigation";
 import { useState } from "react";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,8 +45,9 @@ function App() {
           }
         />
         <Route path="/inventories/:id" element={<InventoryDetailsPage />} />
-        <Route path="/inventories/:id//edit" element={<EditInventoryPage />} />
+        <Route path="/inventories/:id/edit" element={<EditInventoryPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

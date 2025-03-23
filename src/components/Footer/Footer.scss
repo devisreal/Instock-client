@@ -1,0 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: $placeholder-text;
+  font-size: 1rem;
+}

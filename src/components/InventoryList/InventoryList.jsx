@@ -1,9 +1,11 @@
 import "./InventoryList.scss";
-import sortImg from "../../assets/icons/sort-24px.svg";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import Inventory from "../Inventory/Inventory";
+import ListHeader from "../ListHeader/ListHeader";
+import TableHeadings from "../TableHeadings/TableHeadings";
 
 export default function InventoryList({
   setSelectedInventory,
@@ -32,49 +34,8 @@ export default function InventoryList({
 
   return (
     <section className="inventory-list">
-      <header className="inventory-list__header">
-        <h1 className="inventory-list__title">Inventory</h1>
-        <div className="inventory-list__cta-wrapper">
-          <input
-            className="inventory-list__search-bar"
-            type="search"
-            name="searchbar"
-            placeholder="Search..."
-          />
-          <button className="inventory-list__button">
-            <Link className="inventory-list__link" to="/inventories/add">
-              + Add New Item{" "}
-            </Link>
-          </button>
-        </div>
-      </header>
-      <div className="inventory-list__table-headings">
-        <ul className="inventory-list__table-headings-list">
-          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
-            INVENTORY ITEM
-            <img className="inventory-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="inventory-list__table-heading">
-            CATEGORY
-            <img className="inventory-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
-            STATUS
-            <img className="inventory-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="inventory-list__table-heading ">
-            QTY{" "}
-            <img className="inventory-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="inventory-list__table-heading">
-            WAREHOUSE{" "}
-            <img className="inventory-list__sort-icon" src={sortImg} alt="" />
-          </li>
-          <li className="inventory-list__table-heading inventory-list__table-heading--wide">
-            ACTIONS
-          </li>
-        </ul>
-      </div>
+      <ListHeader warehousesPage={false} />
+      <TableHeadings warehousesPage={false} />
 
       {inventories.map((inventory) => {
         return (

@@ -21,6 +21,7 @@ export default function Modal({
           inventoriesPage ? "inventories" : "warehouses"
         }/${itemId}`
       );
+      setIsModalOpen(false);
     } catch (error) {
       console.error(error);
     }

@@ -72,7 +72,9 @@ export default function Inventory({
           alt="Bin inventory icon"
           onClick={handleDeleteBtn}
         />
-        <Link to={`/inventories/${inventory.id}/edit`}>
+        <Link
+          className="inventory-main__edit-link"
+          to={`/inventories/${inventory.id}/edit`}
           <img
             className="inventory-main__icon"
             src={editIcon}
