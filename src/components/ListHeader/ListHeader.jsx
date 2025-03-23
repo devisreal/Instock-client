@@ -21,7 +21,7 @@ export default function ListHeader(page) {
         />
         {warehousesPage ? (
           <button className="list-header__button">
-            <Link className="list-header__link" to="/inventories/add">
+            <Link className="list-header__link" to="/warehouses/add">
               + Add New Warehouse{" "}
             </Link>
           </button>

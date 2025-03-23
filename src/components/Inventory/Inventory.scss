@@ -2,14 +2,12 @@
 @use "../../styles/partials/mixins" as *;
 
 .inventory-main {
-  border-bottom: 1px $divider-lines solid;
-  margin: 0 auto;
+  @include table;
 
   @include tablet {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    // padding-left: 2rem;
   }
 
   &:hover {
@@ -17,15 +15,7 @@
   }
 
   &__info-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 0.5rem;
-
-    @include tablet {
-      justify-content: space-evenly;
-      width: 100%;
-    }
+    @include table-info-container;
 
     @include desktop {
       padding-right: 4rem;
@@ -54,10 +44,7 @@
   }
 
   &__link-wrapper {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
+    @include table-link-wrapper;
   }
 
   &__link {
@@ -71,6 +58,7 @@
     @include tablet {
       width: 50%;
       width: 25%;
+      padding: 0;
     }
   }
 
@@ -106,11 +94,8 @@
   }
 
   &__icons-wrapper {
-    margin: 0.5rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
+    @include table-icons-wrapper;
     align-items: center;
-    padding-bottom: 1rem;
 
     @include tablet {
       gap: 1rem;

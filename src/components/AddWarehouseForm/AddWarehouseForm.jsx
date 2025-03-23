@@ -139,8 +139,6 @@ export default function AddWarehouseForm({ warehouseData, isEditing }) {
 
     formValues.contact_phone = formatPhoneNumber(formValues.contact_phone);
 
-    console.log(formValues);
-
     addWarehouse(formValues);
     setFormValues(initialFormValues);
     setFormErrors({});

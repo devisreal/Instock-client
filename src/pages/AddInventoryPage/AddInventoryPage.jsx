@@ -1,5 +1,5 @@
 import "../AddInventoryPage/AddInventoryPage.scss";
-import { data, Link, useParams } from "react-router-dom";
+import { data, Link, useNavigate, useParams } from "react-router-dom";
 import back from "../../assets/icons/arrow_back-24px.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -19,6 +19,7 @@ export default function AddInventoryPage() {
   const [categories, setCategories] = useState(null);
   const [warehouses, setWarehouses] = useState(null);
   const [formErrors, setFormErrors] = useState({});
+  const navigate = useNavigate();
 
   const changeHandler = (e) => {
     const updatedInventoryItem = {
@@ -90,6 +91,7 @@ export default function AddInventoryPage() {
         inventoryToSubmit
       );
       setFormErrors(errors);
+      navigate("/inventories");
     } catch (error) {
       throw error;
     }
@@ -108,10 +110,10 @@ export default function AddInventoryPage() {
     <div className="edit__inventory">
       <div className="header">
         <section className="title">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <img src={back} alt="back to homepage" />
           </Link>
-          <h1> AddInventory Item</h1>
+          <h1> Add Inventory Item</h1>
         </section>
       </div>
       <form className="form" onSubmit={submitHandler}>
@@ -124,7 +126,7 @@ export default function AddInventoryPage() {
               <input
                 name="item_name"
                 onChange={changeHandler}
-                defaultValue={"Item Name"}
+                placeholder={"Item Name"}
                 className={`item__input ${
                   formErrors.item_name ? "item__input--error" : ""
                 }`}
@@ -142,7 +144,7 @@ export default function AddInventoryPage() {
               <textarea
                 name="description"
                 onChange={changeHandler}
-                defaultValue={"Brief description of item"}
+                placeholder={"Brief description of item"}
                 className={`description__input ${
                   formErrors.description ? "description__input--error" : ""
                 }`}
@@ -157,7 +159,7 @@ export default function AddInventoryPage() {
             <label className="form__label">
               <p className="form__subtitle">Category</p>
               <select
-                defaultValue={"Category"}
+                placeholder={"Category"}
                 className="dropdown"
                 name="category"
                 onChange={changeHandler}
@@ -210,7 +212,7 @@ export default function AddInventoryPage() {
                     type="text"
                     name="quantity"
                     onChange={changeHandler}
-                    defaultValue={"Quantity"}
+                    placeholder={"Quantity"}
                   />
                 </label>
               )}
@@ -224,7 +226,7 @@ export default function AddInventoryPage() {
             <label className="warehouse__label">
               <p className="form__subtitle">Warehouse</p>
               <select
-                defaultValue={"Warehouse"}
+                placeholder={"Warehouse"}
                 className="dropdown"
                 name="warehouse_id"
                 onChange={changeHandler}
@@ -241,7 +243,7 @@ export default function AddInventoryPage() {
           </div>
         </div>
         <div className="submit__wrapper">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <p className="btn__cancel">Cancel</p>
           </Link>
           <button className="btn__save">Save</button>

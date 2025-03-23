@@ -1,105 +1,29 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-// .warehouse {
-//   width: 90%;
-//   margin: auto;
+.inventory-list {
+  &__table-headings {
+    @include table-headings;
+  }
 
-//   &__details {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//   }
+  &__table-headings-list {
+    @include table-headings-list;
+  }
 
-//   &__nav {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     border-bottom: solid 2px $divider-lines;
-//     margin-bottom: 1rem;
-//   }
+  &__table-heading {
+    display: flex;
 
-//   &__title {
-//     display: flex;
-//     flex-direction: row;
-//     gap: 1rem;
-//     flex-wrap: wrap;
-//     align-items: center;
-//   }
+    @include tablet {
+      justify-content: center;
+      width: 20%;
+      white-space: nowrap;
+    }
+  }
 
-//   &__details {
-//     @include tablet {
-//       display: flex;
-//       flex-direction: row;
-//     }
-//   }
-// }
-// .back__link {
-//   display: flex;
-//   align-items: center;
-//   cursor: pointer;
-// }
-
-// .address {
-//   &__title {
-//     color: $placeholder-text;
-//   }
-
-//   @include tablet {
-//     max-width: 60%;
-//   }
-// }
-
-// .edit {
-//   display: flex;
-//   align-items: center;
-//   gap: 4px;
-//   background-color: $instock-indigo;
-//   color: $instock-white;
-//   border-radius: 50px;
-//   border: solid $instock-indigo;
-//   padding: 0.5rem;
-
-//   @include tablet {
-//     border-radius: 20px;
-//     padding: 0px 16px;
-//   }
-// }
-
-// .btn__text {
-//   display: none;
-
-//   @include tablet {
-//     display: flex;
-//   }
-// }
-
-// .contact {
-//   display: flex;
-//   flex-direction: row;
-//   gap: 2rem;
-//   border-bottom: solid 2px #bdc5d5;
-
-//   &__title {
-//     color: $placeholder-text;
-//   }
-
-//   @include tablet {
-//     border-left: solid 2px #bdc5d5;
-//     padding-left: 1rem;
-//     width: 60%;
-//     justify-content: center;
-//     justify-content: space-evenly;
-//     border-bottom: none;
-//   }
-// }
-
-// .name {
-//   &__title {
-//     color: $placeholder-text;
-//   }
-// }
+  &__sort-icon {
+    width: 1rem;
+  }
+}
 
 .warehouse {
   width: 90%;
@@ -120,9 +44,9 @@
     width: 80%;
   }
 
-  //   :last-child {
-  //     border-bottom: none;
-  //   }
+  :last-child {
+    border-bottom: none;
+  }
 
   &__header {
     display: flex;
@@ -131,7 +55,6 @@
     height: 7rem;
 
     @include tablet {
-      //   border: none;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;

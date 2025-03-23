@@ -117,7 +117,7 @@ export default function EditInventoryPage() {
     <div className="edit__inventory">
       <div className="header">
         <section className="title">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <img src={back} alt="back to homepage" />
           </Link>
           <h1> Edit Inventory Item</h1>
@@ -250,7 +250,7 @@ export default function EditInventoryPage() {
           </div>
         </div>
         <div className="submit__wrapper">
-          <Link className="back" to={"/"}>
+          <Link className="back" to={"/inventories"}>
             <p className="btn__cancel">Cancel</p>
           </Link>
           <button className="btn__save">Save</button>

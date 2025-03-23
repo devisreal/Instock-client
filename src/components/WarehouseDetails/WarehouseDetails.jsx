@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import back from "../../assets/icons/arrow_back-24px.svg";
 import sortImg from "../../assets/icons/sort-24px.svg";
 import EditSvg from "../EditSvg/EditSvg";
@@ -106,7 +105,7 @@ export default function WarehouseDetails({
           <>
             <div className="inventory-list__table-headings">
               <ul className="inventory-list__table-headings-list">
-                <li className="inventory-list__table-heading inventory-list__table-heading--wide">
+                <li className="inventory-list__table-heading">
                   INVENTORY ITEM
                   <img
                     className="inventory-list__sort-icon"
@@ -122,7 +121,7 @@ export default function WarehouseDetails({
                     alt=""
                   />
                 </li>
-                <li className="inventory-list__table-heading inventory-list__table-heading--wide">
+                <li className="inventory-list__table-heading">
                   STATUS
                   <img
                     className="inventory-list__sort-icon"
@@ -138,9 +137,7 @@ export default function WarehouseDetails({
                     alt=""
                   />
                 </li>
-                <li className="inventory-list__table-heading inventory-list__table-heading--wide">
-                  ACTIONS
-                </li>
+                <li className="inventory-list__table-heading">ACTIONS</li>
               </ul>
             </div>
 

@@ -30,3 +30,56 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin table {
+  border-bottom: 1px $divider-lines solid;
+  margin: 0 auto;
+}
+
+@mixin table-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+
+  @include tablet {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+@mixin table-icons-wrapper {
+  margin: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+@mixin table-link-wrapper {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin table-headings {
+  display: none;
+  background-color: rgba(237, 235, 235, 0.34);
+  height: 2.5rem;
+
+  @include tablet {
+    display: flex;
+    min-width: 7.8125rem;
+  }
+}
+
+@mixin table-headings-list {
+  font-size: 0.75rem;
+  display: flex;
+  gap: 1rem;
+
+  @include tablet {
+    justify-content: center;
+    width: 100%;
+  }
+}
